@@ -48,6 +48,9 @@ RUN apt-get update && apt-get install -qy \
     python-dev \
   && ln -sf /usr/bin/python2.7 /usr/bin/python \  
   && rm -rf /var/lib/apt/lists/*
+  
+# install missing python dependencies
+RUN /usr/bin/python -m pip install pefile
 
 # build empire from source
 # TODO: When we merge to master set branch to master
